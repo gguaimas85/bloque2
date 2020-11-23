@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La clase</title>
+</head>
+<body>
+    <!--12. [LaClase]
+    Confeccionar un script que permita a un usuario ingresar nombre de alumno y notas en distintos vectores (condición de finalización → alumno = “”). Al finalizar la carga se pide:
+        a. Cantidad de alumnos cargados 
+        b. Cantidad de alumnos aprobados (nota >=6) 
+        c. Cantidad de alumnos promocionados 
+        d. Alumno/s con mayor nota (si son muchos mostrarlos todos) 
+        e. Alumno/s con menor nota 
+        f. Media de aprobados (Promedio de todos los alumnos aprobados)
+        g. Media de desaprobados (Promedio de todos los alumnos desaprobados) 
+        h. Ordenar y mostrar los nombres de los alumnos por orden alfabético 
+        i. Cantidad de notas pares y cantidad de notas impares.  
+    -->
+    <script>
+        const nombreAlum = [];
+        const notas = [];
+        let alumno;
+        let aprobados=0;
+        let desaprobados=0;
+        let promocionados=0;
+        let mayor=0;
+        let menor=10;
+        let countA=0;
+        let countDa=0;
+        let pares=0;
+        let impares=0;
+
+        //Ingreso de datos para los nombres y las notas de los alumnos
+        do{
+            alumno=prompt("Ingrese nombre del alumno")
+
+            if(alumno==""){
+                alert(`Finalización del programa por ingresar un nombre inválido`);
+                break;
+            }
+
+            nombreAlum.push(alumno);
+
+            let nota=parseInt(prompt("Ingrese nota"));
+            notas.push(nota);
+
+            nota>=8 ? promocionados++ : null;
+
+            if(nota>=6){
+                aprobados++;
+                countA += nota;
+            }
+
+            if(nota<6){
+                desaprobados++;
+                countDa += nota;
+            }
+
+            nota%2===0 ? pares++ : impares++;
+    
+        }while(!alumno=="");
+
+        //Cantidad de alumnos cargados
+        document.write(`Cantidad de alumnos cargados: ${nombreAlum.length}<br>`);
+
+        //Cantidad de alumnos aprobados (nota >=6)
+        document.write(`Alumnos aprobados: ${aprobados}<br>`);
+
+        //Cantidad de alumnos promocionados
+        document.write(`Alumnos promocionados: ${promocionados}<br>`);
+
+        //Alumno/s con mayor nota y menor nota 
+        for(let i = 0; i < notas.length; i++){
+            notas[i] >= mayor ? mayor = notas[i] : null;
+            notas[i] <= menor ? menor = notas[i] : null;
+ 
+        }
+         
+        document.write(`La mayor nota es ${mayor}<br>`);
+        document.write(`Alumno/s con mayor nota: `);
+
+        //Mostar el alumno/s con la mayor nota
+        for (let i = 0; i < notas.length; i++) {
+            mayor == notas[i] ?
+            document.write(`${nombreAlum[i]}, nota: ${notas[i]} `)
+            :""
+            
+        }
+
+        document.write(`<br>La menor nota es ${menor}<br>`);
+        document.write(`Alumno/s con menor nota: `);
+
+        //Mostar el alumno/s con la menor nota
+        for (let i = 0; i < notas.length; i++) {
+            menor == notas[i] ?
+            document.write(`${nombreAlum[i]}, nota: ${notas[i]} `)
+            :""
+            
+        }
+
+        //Media de aprobados (Promedio de todos los alumnos aprobados)
+        document.write(`<br>El promedio de los aprobados es: ${countA/aprobados}`);
+
+        //Media de desaprobados
+        if(countDa==0){
+            document.write(`No hay alumnos desaprobados`)
+        }else{
+            document.write(`<br>El promedio de los desaprobados es: ${countDa/desaprobados}`);
+        }
+        
+        //Ordenar y mostrar los nombres de los alumnos por orden alfabético
+        for (let i = 0; i < nombreAlum.length; i++) {
+            let temporal;
+            for (let j = 1; j < (nombreAlum.length - i); j++) {
+                if (nombreAlum[j - 1] > nombreAlum[j]) {
+                    temporal = nombreAlum[j - 1];
+                    nombreAlum[j - 1] = nombreAlum[j];
+                    nombreAlum[j] = temporal;
+                }
+            }
+        }
+
+        //Ordenar y mostrar los nombres de los alumnos por orden alfabético
+        document.write(`<br>Orden alfabetico de los alumnos: ${nombreAlum.join(`, `)}`);
+
+        //Cantidad de notas pares y cantidad de notas impares.
+        document.write(`<br>Notas pares: ${pares}, notas impares: ${impares}`);
+
+    </script>
+    
+</body>
+</html>

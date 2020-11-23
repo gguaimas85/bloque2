@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Array</title>
+</head>
+<body>
+    <!--11. [newArray]
+        Crear un vector con 5 valores aleatorios comprendidos entre 1 y 1000. Luego extraer los dos últimos elementos sumarlos y mostrarlos. Imprimir también el tamaño final del vector
+        Recordar que const nro=1+(Math.random()*1000); permite generar un número aleatorio.
+    -->
+    <script>
+        let valores=[];
+        let sumaUlt=0;
+
+        document.write(`Números aleatoreos entre 1 y 100: `);
+        document.write(`<br>`);
+        while(valores.length<5){
+            let nro=Math.round(1+(Math.random()*1000));
+            valores.push(nro);
+        }
+
+        for(let i=0; i<valores.length;i++){
+            document.write(`${valores[i]}<br>`);
+        }
+
+        document.write(`Los últimos dos números son:<br> `)
+
+        for(let i=3; i<valores.length;i++){
+            document.write(`${valores[i]}<br>`);
+            sumaUlt+=valores[i];
+        }
+
+        document.write(`La suma de los dos últmos valores es: ${sumaUlt}<br>`);
+        document.write(`El tamaño del vector es ${valores.length}`);
+
+    </script>  
+    
+</body>
+</html>

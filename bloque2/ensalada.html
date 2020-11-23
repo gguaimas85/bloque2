@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ensalada</title>
+</head>
+<body>
+    <!--3. [Ensalada]
+    Escribir un script en el cual se ingresen 6 números enteros. Con estos se debe calcular la  suma de los 3 primeros y el producto entre el tercero, el cuarto y el 5to y sumarle el sexto.-->
+    <script>
+        const num1 = parseInt( prompt("Ingrese el primer número"));
+        const num2 = parseInt( prompt("Ingrese segundo número"));
+        const num3 = parseInt( prompt("Ingrese tercer número"));
+        const num4 = parseInt( prompt("Ingrese cuarto número")) ;
+        const num5 = parseInt( prompt("Ingrese quinto número"));
+        const num6 = parseInt( prompt("Ingrese sexto número"));
+
+        const suma = num1 + num2 + num3;
+        const producto = num3 * num4 * num5;
+        const productoSuma = producto + num6;
+
+        document.write(`Números ingresados: ${num1}, ${num2}, ${num3}, ${num4}, ${num5}, ${num6}`)
+        document.write(`<br>La suma de los tres primeros es: ${suma}`);
+        document.write(`<br>El producto del tercer, cuarto y quinto es: ${producto}`);
+        document.write(`<br>La suma del producto más el último numero es: ${productoSuma}`);
+
+    </script>
+    
+</body>
+</html>
