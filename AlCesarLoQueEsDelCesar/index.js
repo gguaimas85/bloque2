@@ -1,6 +1,6 @@
 //[AlCesarLoQueEsDelCesar] Implementar una función que pueda aplicar el cifrado del césar. (Googlear)
 
-const caesarCode = (texto, desp) =>{
+const caesarCode = (texto, desp=3) =>{
     const cifrado=[];
     let codigoLetra;
 
