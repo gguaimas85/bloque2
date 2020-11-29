@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumnos</title>
+    <script src="index.js"></script>
+</head>
+<body>
+    <script>
+        const alumnos=[];
+        const notas=[];
+
+        cargarDatos(alumnos,notas);
+        //document.write(notas);
+        mostrarMayor(alumnos,notas);
+        mostrarMenor(alumnos,notas);
+        document.write(`Promedio de las notas : ${promedio(notas)}`)
+        
+
+
+       /* //Carga de alumnos y notas
+        for (let i = 0; i < 3; i++) {
+            alumnos.push(prompt("Ingrese nombre de alumno"));
+            notas.push(parseInt(prompt("Ingrese nota")));
+        }*/
+
+        //Mostrar todos los alumnos con sus notas
+        /*for (let i = 0; i < 3; i++) {
+            //document.write(`Alumno: ${alumnos[i]}, Nota: ${notas[i]}<br>`);
+            
+        }*/
+        
+        /*let mayor=0;
+        let menor=10;
+        for (let i = 0; i < 3; i++) {
+            notas[i] >= mayor ? mayor = notas[i] : null;
+            notas[i] <= menor ? menor = notas[i] : null;
+            
+        }
+
+        //Mostrar alumno con mayor
+        /*for (let i = 0; i < 3; i++) {
+            mayor === notas[i] ? 
+                document.write(`Alumno con mayor nota: ${alumnos[i]}, nota: ${notas[i]}<br>`)
+                : null;
+              
+        }*/
+
+        /*//Mostrar alumno con menor nota
+        for (let i = 0; i < 3; i++) {
+            menor === notas[i] ? 
+                document.write(`Alumno con menor nota: ${alumnos[i]}, nota: ${notas[i]}<br>`)
+                : null;
+            
+        }*/
+
+        //Mostrar el promedio de las notas
+        /*let cont=0;
+        for (let i = 0; i < notas.length; i++) {
+            cont += notas[i];
+            
+        }
+
+        document.write(`El promedio de las notas es: ${cont/3}`);*/
+        
+        
+    </script>
+    
+</body>
+</html>
